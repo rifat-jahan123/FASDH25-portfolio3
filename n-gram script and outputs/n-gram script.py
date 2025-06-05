@@ -3,7 +3,7 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
 # Load data
-df = pd.read_csv("dataframes/n-grams/1-gram/1-gram.csv")
+df = pd.read_csv("../data/dataframes/n-grams/1-gram/1-gram.csv")
 df.columns = df.columns.str.strip()
 
 # Create datetime
