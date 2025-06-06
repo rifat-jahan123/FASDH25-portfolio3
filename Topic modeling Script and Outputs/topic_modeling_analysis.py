@@ -150,7 +150,7 @@ fig_monthly.show()
 # This selects the five columns, Topic label - the human readable name and the four topic columns associated with the articles 
 # It uses melt function so that each has only one keyword and the topic label is repeated for each word
 
-keyword_df = df[["Topic_Label", "topic_1", "topic_2", "topic_3", "topic_4"]].melt(
+keyword_df = df[["Topic_Label", "topic_1", "topic_2", "topic_3", "topic_4"]].melt(     # ChatGPT conversation 1
     id_vars="Topic_Label",  # Keeps the topic label the same
     value_name="Keyword"   # creates one column for all keywords from the four keyword columns
 )
