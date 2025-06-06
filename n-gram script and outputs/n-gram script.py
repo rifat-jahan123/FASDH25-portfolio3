@@ -93,7 +93,7 @@ fig.update_xaxes(title_text="Month", tickangle=45, row=1, col=2)
 fig.update_yaxes(title_text="Frequency", row=1, col=1)
 
 #save as html
-fig.write_html("monthly_frequency_of_peace_and_conflict_terms")
+fig.write_html("monthly_frequency_of_peace_and_conflict_terms.html")
 
 #display the final graph 
 fig.show()
