@@ -17,6 +17,7 @@ print(yearly)
 monthly = df.groupby(["year", "month"])["length"].agg(["sum", "mean", "count"]).reset_index()
 
 # Create a new column combining year and month in "YYYY-MM" format
+# got help from AI Entry 6
 monthly["date"] = monthly["year"].astype(str) + "-" + monthly["month"].astype(str).str.zfill(2)
 
 # Convert the "date" column into datetime format for better handling in graphs
@@ -84,7 +85,7 @@ print("Graph saved: samrin-average-month.html")
 # Create year_month and length_type columns
 df["year_month"] = pd.to_datetime(df["year"].astype(str) + "-" + df["month"].astype(str).str.zfill(2))
 
-def label_length(length):
+def label_length(length):  # got help from AI Entry 2
     if length < 300:
         return "Short (<300)"
     elif length <= 800:

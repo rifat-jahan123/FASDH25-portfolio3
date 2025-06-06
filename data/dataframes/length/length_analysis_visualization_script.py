@@ -64,6 +64,7 @@ fig5.show()
 df["length_type"] = df["length"].apply(lambda x: "Short (<300)" if x < 300 else "Medium (300–800)" if x <= 800 else "Long (>800)")
 
 # Create a new column 'year_month' by combining 'year' and 'month' into a datetime format
+# got help from AI Entry 6
 df["year_month"] = pd.to_datetime(df["year"].astype(str) + "-" + df["month"].astype(str).str.zfill(2))
 
 # Grouping the data by year_month and length_type, and counting the number of articles in each group
@@ -90,9 +91,10 @@ month_counts = df_short["year_month"].value_counts()
 active_months = month_counts[month_counts >= 10].index  # Keep only those months where the number of articles is 10 or more
 
 # Filter the dataset to include only those active months
-df_short = df_short[df_short["year_month"].isin(active_months)]   
+df_short = df_short[df_short["year_month"].isin(active_months)] # got help from AI Entry 3  
 
 # Create faceted histogram using the filtered data
+# got help from AI Entry 3
 fig7 = px.histogram(df_short,
                     x="length",
                     facet_col="year_month",  # Create one small chart for each one
